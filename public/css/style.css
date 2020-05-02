@@ -1,0 +1,250 @@
+.alert-error{
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.alert-success_msg{
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+#main_body{
+  margin-left: 0px;
+}
+
+#main_body{
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 95%;
+  height: 665px;
+}
+
+.row{
+  height: inherit;
+}
+
+.col-md-4 , .col-md-6{
+  height: inherit;
+}
+
+
+#tracker h5{
+  text-align: center;
+  margin-top: 5px;
+
+}
+
+#left_container{
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  -moz-box-shadow:    3px 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px 3px #ccc;
+  box-shadow:         3px 3px 3px 3px #ccc;
+  min-height: 1px;
+  position: relative;
+  width: 100%;
+  margin-left: 20px;
+  left: 0%;
+  transform: translate(0%, 0%);
+  height: 100%;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+#reg{
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  -moz-box-shadow:    3px 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px 3px #ccc;
+  box-shadow:         3px 3px 3px 3px #ccc;
+  min-height: 1px;
+  position: relative;
+  width: 100%;
+  margin-left: 20px;
+  left: 0%;
+  transform: translate(0%, 0%);
+  height: auto;
+  border-radius: 10px;
+  padding:10px;
+  margin:10px;
+}
+
+
+#main_container{
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  -moz-box-shadow:    3px 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px 3px #ccc;
+  box-shadow:         3px 3px 3px 3px #ccc;
+  min-height: 1px;
+  position: relative;
+  width: 100%;
+  margin-left: 20px;
+  left: 0%;
+  transform: translate(0%, 0%);
+  height: auto;
+  border-radius: 10px;
+  max-height: 665px;
+  overflow: auto;
+}
+
+
+
+
+
+#right_container{
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  -moz-box-shadow:    3px 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px 3px #ccc;
+  box-shadow:         3px 3px 3px 3px #ccc;
+  min-height: 1px;
+  position: relative;
+  width: 100%;
+  margin-left: 20px;
+  left: 0%;
+  transform: translate(0%, 0%);
+  height: auto;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+#dashboard_table thead tr th{
+  font-size: 14px;
+}
+
+#dashboard_table thead tr{
+  text-align: center;
+}
+
+#state_table tbody{
+  font-size: 12px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Basic Style */
+#incomplete-tasks #complete-tasks ul {
+  margin: 0;
+  padding: 0;
+}
+#incomplete-tasks #complete-tasks li * {
+  float: left;
+}
+#incomplete-tasks #complete-tasks li, h3 {
+  clear:both;
+  list-style:none;
+}
+#incomplete-tasks #complete-tasks input, button {
+  outline: none;
+}
+
+/* Heading */
+h3,
+label[for='new-task'] {
+  color: #333;
+  font-weight: 700;
+  font-size: 15px;
+  border-bottom: 2px solid #333;
+  padding: 15px 0 10px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+
+/* New Task */
+label[for='new-task'] {
+  display: block;
+  margin: 0 0 20px;
+}
+
+
+/* Task list */
+#incomplete-tasks #complete-tasks li {
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+#incomplete-tasks #complete-tasks li > input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 15px;
+}
+#incomplete-tasks #complete-tasks li > label {
+  font-size: 18px;
+  line-height: 40px;
+  width: 237px;
+  padding: 0 0 0 11px;
+}
+#incomplete-tasks #complete-tasks li >  input[type="text"] {
+  width: 226px;
+}
+#incomplete-tasks #complete-tasks li > .delete:hover {
+  color: #CF2323;
+}
+
+/* Completed */
+#completed-tasks label {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Edit Task */
+#incomplete-tasks #complete-tasks ul li input[type=text] {
+  display:none;
+}
+
+#incomplete-tasks #complete-tasks ul li.editMode input[type=text] {
+  display:block;
+}
+
+#incomplete-tasks #complete-tasks ul li.editMode label {
+  display:none;
+}
+
+
+
+#empty_list_msg{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.corona_world{
+  font-weight: 700;
+  font-size: 13px;
+  text-align:center;
+  margin:5px;
+}
+
+.receiver h6{
+  padding: 0px;
+  margin: 0px;
+  font-size: 13px;
+}
+
+.receiver h5{
+  padding: 0px;
+  margin: 0px;
+  font-size: 15px;
+}
+
+.items-list{
+  font-size: 11px;
+  max-height: 160px;
+  overflow:auto;
+}
+
+.help{
+  margin-top: 10px;
+}
+
+
+#update_list{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

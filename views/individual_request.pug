@@ -1,0 +1,160 @@
+doctype html
+html
+  head
+    title CARES
+    link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet' href='/css/style.css')
+  body
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+      a.navbar-brand(href='/') CARES
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/')
+              | Home 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='/request')
+              | Request 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='https://paytm.com/helpinghand/pm-cares-fund')
+              | Contribute 
+              span.sr-only (current)
+        ul.nav.navbar-nav.navbar-right
+          if user
+            li.nav-item
+              a.nav-link(href='/users/profile/'+user._id) Profile
+            li.nav-item
+              a.nav-link(href='/users/logout') Logout
+          else
+            li.nav-item
+              a.nav-link(href='/users/register') Register
+            li.nav.item
+              a.nav-link(href='/users/login') Login
+    .container
+      != messages('message',locals)
+      if errors
+        each error, i in errors
+          div(class="alert alert-danger ") #{error.msg}
+    .container-fluid#main_body
+      .row#main_row
+        .col-md-4#tracker
+          .container-fluid#left_container
+            h5 COVID-19 Dashboard
+            table.table.table-sm#dashboard_table
+              thead
+                tr
+                  th.center(scope="col" style="color:#eb0b0b") Confirmed
+                  th.center(scope="col" style="color:#1a72e2") Active
+                  th.center(scope="col" style="color:#00e009") Recovered
+                  th.center(scope="col" style="color:#757575") Deaths
+                tr
+                  th.center(style="color:#eb0b0b") #{data[0].Confirmed}
+                  th.center(style="color:#1a72e2") #{data[0].Active}
+                  th.center(style="color:#00e009") #{data[0].Recovered}
+                  th.center(style="color:#757575") #{data[0].Deaths}
+            table.table.table-sm.table-striped.table-hover#state_table
+              tbody
+                tr
+                  th.center States
+                  th.center Confirmed
+                  th.center Active
+                  th.center Recovered
+                  th.center Deaths
+                -for(var i=1;i<data.length;i++)
+                  tr
+                    td(style ="word-break:break-wors") #{data[i].State}
+                    td.center #{data[i].Confirmed}
+                    td.center #{data[i].Active}
+                    td.center #{data[i].Recovered}
+                    td.center #{data[i].Deaths}
+        .col-md-6
+          .container#main_container
+            h2(style="margin:10px;text-align:center") #{request.type} Request
+            h5(style="float:right;") Requested on :
+            h5 Requested by :  
+            h6 #{request.user.name}
+            h6 #{request.user.number}
+            h6 #{request.user.address}
+            h6 #{request.user.city} - #{request.user.pincode}
+            br
+            h3 Pending
+            table#incomplete-tasks.table.table-sm
+              thead
+                th Status
+                th Particulars
+                th Quantity
+                th Units
+              tbody#t-body
+                each item,i in request.items
+                  tr
+                    td
+                      input(type="checkbox")
+                    td #{item.name}
+                    td #{item.quantity}
+                    td #{item.unit}
+            h5#empty_list_msg No items in the list to display
+            h3 Completed
+            table#completed-tasks.table.table-sm
+              thead 
+                th Status
+                th Particulars
+                th Quantity
+                th Units
+              tbody#t-body
+            h5#empty_list_msg No items in the list to display
+            button.btn.btn-success.btn-sm.btn-block#update_list Update
+        .col-md-2
+          .container#right_container
+            h3 IMPOTANT LINKS
+            ul(style="padding:15px;")
+              a(href="https://www.mohfw.gov.in/pdf/coronvavirushelplinenumber.pdf")
+                li HELPLINE NUMBERS [by State]
+              a(href="https://www.mohfw.gov.in/")
+                li Ministry of Health and Family Welfare, Gov. of India
+              a(href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
+                li WHO : COVID-19 Home Page
+              a(href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html")
+                li CDC
+              a(href="https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vShWjNeNn8n0hen_5KIWQhq_RLCq4Obn23SUzRSAT5fKCQgOZuZnWe57g79elkwum2zavntG_GSawDM/pubhtml?gid=1775152218&single=true")
+                li Crowdsourced list of Resources and Essentials from across India
+              a(href="https://coronavirus.thebaselab.com/")
+                li COVID-19 Global Tracker
+          a(href="https://paytm.com/helpinghand/pm-cares-fund")
+            .container#right_container(style="background-image: url('/pm_fund.png');background-repeat: no-repeat;background-size: 210px 150px;height:150px;margin-top:15px;")
+          .container#right_container(style="margin-top:15px;")
+            h3 COVID-19 World
+            .row.corona_world(style="color:#eb0b0b")
+              .col-md-12
+                | Cases
+                br
+                | 2,402,980
+            .row.corona_world(style="color:#00e009")
+              .col-md-12
+                | Recovered
+                br
+                | 615,703
+            .row.corona_world(style="color:#757575")
+              .col-md-12
+                | Deaths
+                br
+                | 165,641
+    .container
+      br
+      br
+      hr
+      footer
+        p(style="text-align:center")
+          | Copyright © 
+          script.
+            document.write(new Date().getFullYear());
+          br
+          |  All rights reserved | This website is made with 
+          i.fa.fa-heart-o(aria-hidden='true')
+          |  by Jayesh Menghani
+      script(src='/bower_components/jquery/dist/jquery.js')
+      script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+      script(src='/js/individual_request.js')
